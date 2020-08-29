@@ -33,6 +33,7 @@ namespace EmployeManagement
             services.ConfigureCors();
             services.ConfigureIISIntegration();
             services.ConfigureLoggerService();
+            services.ConfigureSqlContext(Configuration);
             services.AddControllers();
         }
 
