@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using EmployeManagement.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,9 @@ namespace EmployeManagement
             services.ConfigureIISIntegration();
             services.ConfigureLoggerService();
             services.ConfigureSqlContext(Configuration);
+            services.ConfigureRepositoryManager();
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddControllers();
         }
 
